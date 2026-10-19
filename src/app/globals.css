@@ -1,0 +1,141 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #0b0d17;
+  --panel: #131625;
+  --panel-light: #191d31;
+  --text: #f4f5fb;
+  --muted: #a0a5bd;
+  --purple: #a78bfa;
+  --cyan: #67e8f9;
+  --line: rgba(255, 255, 255, 0.1);
+  --radius: 22px;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--bg);
+  color: var(--text);
+}
+
+body {
+  margin: 0;
+  background-color: var(--bg);
+  color: var(--text);
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+/* Efectos de resplandor ambiental */
+.page-glow {
+  position: absolute;
+  pointer-events: none;
+  filter: blur(100px);
+  opacity: 0.18;
+  z-index: 0;
+  border-radius: 50%;
+}
+
+.glow-one {
+  width: 420px;
+  height: 420px;
+  background: #7c3aed;
+  top: 100px;
+  left: -200px;
+}
+
+.glow-two {
+  width: 380px;
+  height: 380px;
+  background: #0891b2;
+  top: 600px;
+  right: -190px;
+}
+
+.glow-three {
+  width: 450px;
+  height: 450px;
+  background: #6366f1;
+  bottom: 200px;
+  left: 20%;
+}
+
+/* Órbitas decorativas */
+.orbit {
+  position: absolute;
+  border: 1px solid rgba(167, 139, 250, 0.22);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.orbit-a {
+  width: 420px;
+  height: 270px;
+  transform: rotate(-25deg);
+}
+
+.orbit-b {
+  width: 340px;
+  height: 410px;
+  border-color: rgba(103, 232, 249, 0.18);
+  transform: rotate(35deg);
+}
+
+/* Ventana de código interactiva */
+.code-window {
+  width: min(100%, 420px);
+  position: relative;
+  padding-bottom: 24px;
+  background: rgba(19, 22, 37, 0.94);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 18px;
+  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.45);
+  transform: rotate(2deg);
+  transition: transform 0.3s ease;
+}
+
+.code-window:hover {
+  transform: rotate(0deg) scale(1.02);
+}
+
+.cursor-blink {
+  display: inline-block;
+  width: 6px;
+  height: 14px;
+  background: var(--cyan);
+  vertical-align: middle;
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* Fotografía personal */
+.profile-photo-card {
+  position: absolute;
+  z-index: 5;
+  top: 4px;
+  right: 0;
+  width: 190px;
+  padding: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 22px;
+  background: #131625;
+  box-shadow: 0 24px 65px rgba(0, 0, 0, 0.45);
+  transform: rotate(3deg);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-photo-card:hover {
+  transform: rotate(0deg) scale(1.04);
+  box-shadow: 0 28px 75px rgba(103, 232, 249, 0.2);
+}
+
+@media (max-width: 800px) {
+  .profile-photo-card {
+    width: 150px;
+    right: 8px;
+  }
+}
